@@ -1,4 +1,4 @@
-/* Ziggo Modem Neon Card · v1.0.0 · MPL-2.0 · zero third-party dependencies */
+/* Ziggo Modem Neon Card · v1.1.0 · MPL-2.0 · zero third-party dependencies */
 // SPDX-License-Identifier: MPL-2.0
 const CARD_TYPE = "ziggo-modem-card";
 const CARD_IMAGE_URL = new URL("./ziggo-modem-device.webp", import.meta.url)
