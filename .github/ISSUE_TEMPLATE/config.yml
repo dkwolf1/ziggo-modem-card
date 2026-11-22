@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security vulnerability privately
+    url: https://github.com/dkwolf1/ziggo-modem-card/security/advisories/new
+    about: Submit a private report about a security issue in the dashboard card.
+  - name: Report a Ziggo Modem integration issue
+    url: https://github.com/dkwolf1/ha-ziggo-modem/issues
+    about: Go here for modem setup problems or readings already missing from the integration's own sensors.

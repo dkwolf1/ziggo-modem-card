@@ -1,0 +1,27 @@
+name: Feature request
+description: Suggest a change to the Ziggo Modem Neon dashboard card.
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: You can make your suggestion in English or Dutch.
+  - type: textarea
+    id: use-case
+    attributes:
+      label: What are you trying to do?
+      description: Describe the situation and what is difficult with the current card.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: What would you like the card to do?
+      description: Describe the behavior or layout you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Examples or additional context
+      description: Add an anonymized screenshot, a sketch or relevant sensor names if they help explain the idea.
