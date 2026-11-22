@@ -2,7 +2,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
-const moduleUrl = 'https://home-assistant.example/hacsfiles/ziggo-modem-card/ziggo-modem-card.js?v=1';
+const moduleUrl = 'https://home-assistant.example/local/community/ziggo-modem-card/ziggo-modem-card.js?v=1';
 const js = fs.readFileSync(path.join(__dirname, '../dist/ziggo-modem-card.js'), 'utf8')
   .replace('import.meta.url', JSON.stringify(moduleUrl));
 class MockElement {
@@ -33,7 +33,7 @@ card.hass={locale:{language:'nl'},states:{
 }};
 assert.match(card._content.innerHTML, /92 \/ 100/);
 assert.match(card._content.innerHTML, /39\.4/);
-assert.match(card._content.innerHTML, /src="https:\/\/home-assistant\.example\/hacsfiles\/ziggo-modem-card\/ziggo-modem-device\.webp"/);
+assert.match(card._content.innerHTML, /src="https:\/\/home-assistant\.example\/local\/community\/ziggo-modem-card\/ziggo-modem-device\.webp"/);
 assert.match(card._content.innerHTML, /data-action="diagnostics"/);
 assert.match(card._content.innerHTML, /Online/);
 assert.match(card._content.innerHTML, /Kabelprobleem/);
