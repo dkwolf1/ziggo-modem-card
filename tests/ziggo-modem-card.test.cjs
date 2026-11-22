@@ -95,6 +95,18 @@ assert.match(
 );
 assert.match(card._content.innerHTML, /data-action="diagnostics"/);
 assert.match(card._content.innerHTML, /Online/);
+assert.match(card._content.innerHTML, /Sagemcom · DOCSIS · ha-ziggo-modem/);
+const modemStatus = card._hass.states["sensor.ziggo_modem_modem_status"];
+modemStatus.attributes = { docsis_version: "4.0" };
+card.hass = card._hass;
+assert.match(
+  card._content.innerHTML,
+  /Sagemcom · DOCSIS 4\.0 · ha-ziggo-modem/,
+);
+modemStatus.state = "unavailable";
+card.hass = card._hass;
+assert.match(card._content.innerHTML, /Sagemcom · DOCSIS · ha-ziggo-modem/);
+assert.doesNotMatch(card._content.innerHTML, /DOCSIS 4\.0/);
 assert.match(card._content.innerHTML, /Kabelprobleem/);
 assert.doesNotMatch(card._content.innerHTML, /Geen geschiedenis beschikbaar/);
 const grid = card.getGridOptions();

@@ -26,6 +26,9 @@ test("loads the module, image, history and diagnostic reason", async ({
   const card = page.locator("#large ziggo-modem-card");
 
   await expect(card.getByText("75 / 100")).toBeVisible();
+  await expect(
+    card.getByText("Sagemcom · DOCSIS 3.1 · ha-ziggo-modem"),
+  ).toBeVisible();
   await expect(card.getByText("Downstream SNR (dB)")).toBeVisible();
   await expect
     .poll(() =>

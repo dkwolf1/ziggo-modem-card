@@ -58,6 +58,8 @@ Vervang de voorbeeld-ID door die van je eigen sensor. In de editor vind je dit o
 
 ### De waarden lezen
 
+In de kop van de kaart staat de DOCSIS-versie die het modem meldt, zodra de statussensor van de Ziggo Modem-integratie het attribuut `docsis_version` levert.
+
 | Onderdeel                  | Betekenis                                                                                                                                               |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Online                     | De verbinding is actief. Je modem kan tegelijk een lagere signaalscore hebben.                                                                          |
@@ -129,6 +131,8 @@ entities:
 Replace the example ID with your sensor's actual entity ID. In the editor, use **Advanced: map entity IDs**.
 
 ### Reading the values
+
+The card header shows the modem-reported DOCSIS version when the Ziggo Modem integration's status sensor supplies the `docsis_version` attribute.
 
 | Item                         | Meaning                                                                                                                                                           |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
