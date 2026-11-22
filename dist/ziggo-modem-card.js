@@ -639,6 +639,14 @@ class ZiggoModemCard extends HTMLElement {
     if (!this._hass || !this._config || !this.isConnected) return;
     const m = this._resolve(),
       locale = localeFor(this._config, this._hass);
+    const statusState = this._hass.states[m.status];
+    const reportedDocsis = statusState?.attributes?.docsis_version;
+    const docsisVersion =
+      isAvailable(statusState) &&
+      typeof reportedDocsis === "string" &&
+      /^[0-9]+(?:\.[0-9]+)*$/.test(reportedDocsis)
+        ? reportedDocsis
+        : "";
     const quality = this._hass.states[m.signal_quality];
     const reasonAttribute =
       quality?.attributes?.reden ?? quality?.attributes?.reason;
@@ -658,6 +666,7 @@ class ZiggoModemCard extends HTMLElement {
       locale.diagnostics,
       selected,
       qualityReason,
+      docsisVersion,
       this._chartHours,
       this._history.length,
       this._lastHistoryRequest,
@@ -689,8 +698,7 @@ class ZiggoModemCard extends HTMLElement {
       ring =
         tone === "bad" ? "#ff656e" : tone === "warn" ? "#ffb044" : "#59e77c";
     const qualValue = displayValue(quality);
-    const statusState = this._state("status"),
-      rawStatus = displayValue(statusState);
+    const rawStatus = displayValue(statusState);
     const healthy = ["operational", "online", "up", "connected"].includes(
       rawStatus.toLowerCase(),
     );
@@ -729,7 +737,7 @@ class ZiggoModemCard extends HTMLElement {
     const hasData = Boolean(m.status || m.signal_quality || m.ds_snr);
     content.innerHTML = `<ha-card><div class="shell ${this._config.show_modem ? "" : "no-modem "}${this._config.layout === "compact" ? "is-compact " : ""}${this._config.glow ? "is-glowing" : "no-effects"}">
       <div class="glow"></div>
-      <header class="head"><div class="identity"><span class="brand" aria-hidden="true">Z</span><div class="heading"><div class="title">${escapeHTML(this._config.title || locale.title)}</div><div class="subtitle">Sagemcom · DOCSIS · ha-ziggo-modem</div></div></div></header>
+      <header class="head"><div class="identity"><span class="brand" aria-hidden="true">Z</span><div class="heading"><div class="title">${escapeHTML(this._config.title || locale.title)}</div><div class="subtitle">Sagemcom · DOCSIS${docsisVersion ? ` ${escapeHTML(docsisVersion)}` : ""} · ha-ziggo-modem</div></div></div></header>
       ${
         hasData
           ? `<section class="hero">

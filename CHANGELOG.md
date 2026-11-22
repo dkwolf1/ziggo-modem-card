@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Show the modem-reported DOCSIS version in the card header when the integration supplies it.
 - Add linting, formatting, unit and browser tests, pre-commit, and GitHub Actions validation.
 - Document maintenance, release steps, and private vulnerability reporting.
 

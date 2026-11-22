@@ -1,7 +1,7 @@
 import "./dist/ziggo-modem-card.js";
 const updatedAt = new Date().toISOString();
 const readings = {
-  status: ["Operational"],
+  status: ["Operational", { docsis_version: "3.1" }],
   uptime: ["14d 06u"],
   signal_quality: ["Matig", { score: 75, reden: "Downstream SNR verlaagd" }],
   ds_snr: ["36.4", { unit_of_measurement: "dB" }],
