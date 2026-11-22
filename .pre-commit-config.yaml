@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: whitespace
+        name: Check staged whitespace
+        entry: git diff --cached --check
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: project-checks
+        name: Lint, formatting, package validation and unit tests
+        entry: npm run check
+        language: system
+        pass_filenames: false
+        files: \.([cm]?js|jsonc?|md|ya?ml|html|png|webp)$

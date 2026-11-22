@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Add linting, formatting, unit and browser tests, pre-commit, and GitHub Actions validation.
+- Document maintenance, release steps, and private vulnerability reporting.
+
 ## 1.0.0
 
 - Standalone Home Assistant dashboard card for the Ziggo Modem integration.

@@ -18,7 +18,7 @@ Een dashboardkaart voor Home Assistant die de signaalkwaliteit, verbinding en DO
 
 #### Via Marketplace
 
-1. Open in Home Assistant 2026.11 of nieuwer **Instellingen → Marketplace** en kies rechtsboven **Toevoegen via link** (*Add from link*).
+1. Open in Home Assistant 2026.11 of nieuwer **Instellingen → Marketplace** en kies rechtsboven **Toevoegen via link** (_Add from link_).
 2. Voer `https://github.com/dkwolf1/ziggo-modem-card` in. Koppel GitHub als Marketplace erom vraagt, voeg de repository toe en kies **Dashboard** als het type niet automatisch wordt herkend.
 3. Open **Ziggo Modem · Neon** in Marketplace en installeer de kaart. Beheer je dashboardbronnen via YAML, gebruik dan de bron die het installatievenster toont.
 4. Vernieuw de browserpagina. Open je dashboard in bewerkmodus, kies **Kaart toevoegen** en zoek naar **Ziggo Modem · Neon**.
@@ -58,12 +58,12 @@ Vervang de voorbeeld-ID door die van je eigen sensor. In de editor vind je dit o
 
 ### De waarden lezen
 
-| Onderdeel | Betekenis |
-| --- | --- |
-| Online | De verbinding is actief. Je modem kan tegelijk een lagere signaalscore hebben. |
-| Signaalkwaliteit | Score van 0 tot 100, berekend door de Ziggo Modem-integratie. **Diagnostiek** toont de reden als de sensor die doorgeeft, in de taal van de integratie. |
-| Downstream SNR (dB) | De verhouding tussen signaal en ruis, met 24 uur of 7 dagen geschiedenis uit Recorder. |
-| Download- en uploadprofiel | De ingestelde bandbreedteprofielen van het modem. Voor gemeten snelheid heb je een afzonderlijke snelheidstest nodig. |
+| Onderdeel                  | Betekenis                                                                                                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Online                     | De verbinding is actief. Je modem kan tegelijk een lagere signaalscore hebben.                                                                          |
+| Signaalkwaliteit           | Score van 0 tot 100, berekend door de Ziggo Modem-integratie. **Diagnostiek** toont de reden als de sensor die doorgeeft, in de taal van de integratie. |
+| Downstream SNR (dB)        | De verhouding tussen signaal en ruis, met 24 uur of 7 dagen geschiedenis uit Recorder.                                                                  |
+| Download- en uploadprofiel | De ingestelde bandbreedteprofielen van het modem. Voor gemeten snelheid heb je een afzonderlijke snelheidstest nodig.                                   |
 
 ### Problemen oplossen
 
@@ -74,7 +74,7 @@ Vervang de voorbeeld-ID door die van je eigen sensor. In de editor vind je dit o
 
 ### Lokaal ontwikkelen
 
-De kaart gebruikt gewone JavaScript-modules en heeft geen bouwstap of npm-afhankelijkheden. Open de [demo](demo.html) via een lokale webserver om de kaart met fictieve waarden te bekijken. Start bijvoorbeeld vanuit de repository `python -m http.server --bind 127.0.0.1 8000` en open `http://127.0.0.1:8000/demo.html`. Draai de tests met `node --test`.
+Home Assistant laadt de kaart als JavaScript-module zonder bouwstap of npm-afhankelijkheden. Open de [demo](demo.html) via een lokale webserver om de kaart met fictieve waarden te bekijken. Start bijvoorbeeld vanuit de repository `python -m http.server --bind 127.0.0.1 8000` en open `http://127.0.0.1:8000/demo.html`. Zie de [ontwikkelhandleiding](CONTRIBUTING.md) voor linting, pre-commit en tests.
 
 ## English
 
@@ -130,12 +130,12 @@ Replace the example ID with your sensor's actual entity ID. In the editor, use *
 
 ### Reading the values
 
-| Item | Meaning |
-| --- | --- |
-| Online | The connection is active. The modem can be online while the signal score is low. |
-| Signal quality | A score from 0 to 100, calculated by the Ziggo Modem integration. **Diagnostics** shows the reason when the sensor supplies it, using the integration's language. |
-| Downstream SNR (dB) | The signal-to-noise ratio, with 24 hours or seven days of readings from Recorder. |
-| Download and upload profiles | The bandwidth provisioned for your modem. A separate speed test is needed to measure throughput. |
+| Item                         | Meaning                                                                                                                                                           |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Online                       | The connection is active. The modem can be online while the signal score is low.                                                                                  |
+| Signal quality               | A score from 0 to 100, calculated by the Ziggo Modem integration. **Diagnostics** shows the reason when the sensor supplies it, using the integration's language. |
+| Downstream SNR (dB)          | The signal-to-noise ratio, with 24 hours or seven days of readings from Recorder.                                                                                 |
+| Download and upload profiles | The bandwidth provisioned for your modem. A separate speed test is needed to measure throughput.                                                                  |
 
 ### Troubleshooting
 
@@ -146,6 +146,6 @@ Replace the example ID with your sensor's actual entity ID. In the editor, use *
 
 ### Local development
 
-The card uses plain JavaScript modules and needs no build step or npm dependencies. To view the [demo](demo.html) with sample data, run `python -m http.server --bind 127.0.0.1 8000` from the repository and open `http://127.0.0.1:8000/demo.html`. Run `node --test` to check the card.
+Home Assistant loads the card as a JavaScript module without a build step or npm dependencies. To view the [demo](demo.html) with sample data, run `python -m http.server --bind 127.0.0.1 8000` from the repository and open `http://127.0.0.1:8000/demo.html`. See the [contributing guide](CONTRIBUTING.md) for linting, pre-commit, and tests.
 
 [MPL 2.0 license / licentie](LICENSE) · [Changelog / wijzigingslog](CHANGELOG.md)
