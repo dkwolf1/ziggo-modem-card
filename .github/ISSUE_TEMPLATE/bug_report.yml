@@ -1,0 +1,64 @@
+name: Bug report
+description: Report a problem with the Ziggo Modem Neon dashboard card.
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You can report the problem in English or Dutch.
+        Remove credentials, tokens, private URLs and identifying modem information from anything you share.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Describe what you saw and what you expected the card to do.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the dashboard view, card layout or action involved, if relevant.
+      placeholder: |
+        1. Open the dashboard.
+        2. Select the affected card or change one of its settings.
+        3. Describe when the problem appears.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Card and Home Assistant versions
+      description: Include the Ziggo Modem integration version if you know it.
+      placeholder: "Card 1.0.0, Home Assistant 2026.11.0, integration version if known"
+    validations:
+      required: true
+  - type: dropdown
+    id: installation
+    attributes:
+      label: How did you install the card?
+      options:
+        - Home Assistant Marketplace
+        - Manual JavaScript resource
+        - Local demo
+        - Other or unsure
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser or Home Assistant app
+      description: Include the device or operating system if the issue occurs on one device.
+      placeholder: "Microsoft Edge on Windows 11"
+  - type: textarea
+    id: card-config
+    attributes:
+      label: Card configuration
+      description: If relevant, paste the card YAML from the code editor and anonymize any identifying entity IDs.
+      render: yaml
+  - type: textarea
+    id: supporting-details
+    attributes:
+      label: Screenshots, console errors or other details
+      description: For missing or incorrect readings, mention whether the same values are available on the Ziggo Modem entities.
