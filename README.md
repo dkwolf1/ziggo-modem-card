@@ -1,5 +1,12 @@
 # Ziggo Modem · Neon
 
+> [!IMPORTANT]
+> **Verhuisd / Moved**
+>
+> Vanaf v1.7.0 wordt Ziggo Modem Neon meegeleverd met de [Ziggo Modem-integratie](https://github.com/dkwolf1/ha-ziggo-modem). Daar vind je de actuele installatie- en overstapinstructies.
+>
+> Starting with v1.7.0, Ziggo Modem Neon is bundled with the [Ziggo Modem integration](https://github.com/dkwolf1/ha-ziggo-modem). See that repository for current installation and migration instructions.
+
 [Nederlands](#nederlands) · [English](#english)
 
 ![Ziggo Modem · Neon in uitgebreide en compacte weergave met fictieve gegevens / Expanded and compact layouts with sample data](docs/ziggo-modem-neon.png)
